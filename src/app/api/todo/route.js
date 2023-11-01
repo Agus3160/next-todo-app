@@ -11,6 +11,11 @@ export async function GET() {
 export async function POST(request) {
     await connectMongoFB()
     const todoData = await request.json()
-    await Todo.create({title:todoData.title})
-    return NextResponse.json({message: "Todo created"},{status: 201})
+    const newTodo = await Todo.create({title:todoData.title})
+    return NextResponse.json(
+        {
+            newTodo: newTodo, 
+            message: "Todo created"
+        }
+        ,{status: 201})
 }
