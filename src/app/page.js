@@ -4,7 +4,7 @@ import Todo from "@/components/Todo"
 import { useEffect, useState } from "react"
 
 //Animations
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, animate, stagger, delay } from "framer-motion";
 import ToDoInput from "@/components/ToDoInput";
 
 export default function Home() {

@@ -26,11 +26,10 @@ export default function ToDoInput({todos, setTodos}) {
     setTodo(e.target.value)
   }
 
-
   return (
     <>
         <div className="flex">
-            <input placeholder='Enter your to do...' onChange={(e) => onChange(e)} value={todo} className="rounded-l-xl flex-1 p-2" type="text"></input>
+            <input placeholder='Enter your to do...' onKeyUp={(e) => e.key === "Enter" && addTodo()}  onChange={(e) => onChange(e)} value={todo} className="rounded-l-xl flex-1 p-2" type="text"></input>
             <button onClick={() => addTodo()} name="todo" className="rounded-r-xl bg-vintage-300 p-2 text-vintage-100 text-center">Add</button>
         </div>
     </>
